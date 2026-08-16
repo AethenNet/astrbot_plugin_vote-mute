@@ -1,4 +1,4 @@
-name: astrbot_plugin_vote-mute
+name: astrbot_plugin_vote_mute
 display_name: 投票禁言
 desc: QQ群投票禁言插件，支持群成员投票决定是否禁言指定用户，可配置投票时长、参与人数上限、管理员介入、冷却时间等，支持每群独立配置。
 help: |
