@@ -1,0 +1,119 @@
+{
+  "start_vote_prefix": {
+    "description": "发起投票禁言是否需要 \"/\" 前缀",
+    "type": "bool",
+    "default": true,
+    "hint": "开启后，发起投票、查看帮助、查看群配置需要以 / 开头（如 /投票禁言）；关闭后直接发送指令即可触发"
+  },
+  "vote_action_prefix": {
+    "description": "同意禁言和反对禁言是否需要 \"/\" 前缀",
+    "type": "bool",
+    "default": true,
+    "hint": "开启后，同意禁言和反对禁言需要以 / 开头（如 /同意禁言）；关闭后直接发送即可投票"
+  },
+  "default_config": {
+    "description": "默认群配置",
+    "type": "object",
+    "hint": "未单独配置的群使用此默认配置",
+    "items": {
+      "max_participants": {
+        "description": "投票通过所需的参与人数上限",
+        "type": "int",
+        "default": 5,
+        "hint": "当同意人数达到此值时，投票立即通过并执行禁言",
+        "slider": {"min": 2, "max": 50, "step": 1}
+      },
+      "vote_duration": {
+        "description": "投票时长（秒）",
+        "type": "int",
+        "default": 60,
+        "hint": "投票持续的时间，超时后按规则结算",
+        "slider": {"min": 10, "max": 600, "step": 10}
+      },
+      "admin_intervene_ban": {
+        "description": "群管理员、群主介入是否直接禁言",
+        "type": "bool",
+        "default": false,
+        "hint": "开启后，群管理员或群主投同意票时立即执行禁言（普通群员不生效）"
+      },
+      "admin_intervene_cancel": {
+        "description": "群管理员、群主介入是否直接取消禁言",
+        "type": "bool",
+        "default": false,
+        "hint": "开启后，群管理员或群主投反对票时立即取消投票（普通群员不生效）"
+      },
+      "ban_on_timeout": {
+        "description": "倒计时结束时，未达参与人数上限是否直接禁言",
+        "type": "bool",
+        "default": false,
+        "hint": "开启后，投票超时且同意数未达上限时仍执行禁言"
+      },
+      "cooldown": {
+        "description": "投票禁言冷却时间（秒）",
+        "type": "int",
+        "default": 0,
+        "hint": "上次投票禁言结束后需要等待的时间，0 表示无冷却；群管理员、群主无视冷却",
+        "slider": {"min": 0, "max": 3600, "step": 30}
+      }
+    }
+  },
+  "group_configs": {
+    "description": "各群独立配置",
+    "type": "template_list",
+    "hint": "为每个群单独配置投票禁言参数，未配置的群使用上方默认配置",
+    "templates": {
+      "group_config": {
+        "name": "群配置",
+        "display_item": "group_id",
+        "hint": "添加一个群的独立配置",
+        "items": {
+          "group_id": {
+            "description": "群号",
+            "type": "string",
+            "default": "",
+            "hint": "填写要单独配置的 QQ 群号"
+          },
+          "max_participants": {
+            "description": "投票通过所需的参与人数上限",
+            "type": "int",
+            "default": 5,
+            "hint": "当同意人数达到此值时，投票立即通过并执行禁言",
+            "slider": {"min": 2, "max": 50, "step": 1}
+          },
+          "vote_duration": {
+            "description": "投票时长（秒）",
+            "type": "int",
+            "default": 60,
+            "hint": "投票持续的时间，超时后按规则结算",
+            "slider": {"min": 10, "max": 600, "step": 10}
+          },
+          "admin_intervene_ban": {
+            "description": "群管理员、群主介入是否直接禁言",
+            "type": "bool",
+            "default": false,
+            "hint": "开启后，群管理员或群主投同意票时立即执行禁言（普通群员不生效）"
+          },
+          "admin_intervene_cancel": {
+            "description": "群管理员、群主介入是否直接取消禁言",
+            "type": "bool",
+            "default": false,
+            "hint": "开启后，群管理员或群主投反对票时立即取消投票（普通群员不生效）"
+          },
+          "ban_on_timeout": {
+            "description": "倒计时结束时，未达参与人数上限是否直接禁言",
+            "type": "bool",
+            "default": false,
+            "hint": "开启后，投票超时且同意数未达上限时仍执行禁言"
+          },
+          "cooldown": {
+            "description": "投票禁言冷却时间（秒）",
+            "type": "int",
+            "default": 0,
+            "hint": "上次投票禁言结束后需要等待的时间，0 表示无冷却；群管理员、群主无视冷却",
+            "slider": {"min": 0, "max": 3600, "step": 30}
+          }
+        }
+      }
+    }
+  }
+}

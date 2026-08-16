@@ -1,0 +1,22 @@
+name: astrbot_plugin_vote-mute
+display_name: 投票禁言
+desc: QQ群投票禁言插件，支持群成员投票决定是否禁言指定用户，可配置投票时长、参与人数上限、管理员介入、冷却时间等，支持每群独立配置。
+help: |
+  【投票禁言插件使用说明】
+  基础指令：
+  1. 投票禁言 <@用户/QQ号> <分钟> — 发起对指定用户的禁言投票
+  2. 同意禁言 — 投同意票
+  3. 反对禁言 — 投反对票
+  4. 投票禁言帮助 — 查看使用帮助
+  5. 本群投票禁言配置 — 查看当前群配置
+  注意：
+  - 机器人需要有群管理员权限才能执行禁言
+  - 可在插件设置中配置是否需要 "/" 前缀触发指令
+  - 可在插件设置中为每个群单独配置参数
+  - 群管理员/群主可配置介入直接禁言或取消
+version: 1.0.0
+author: SummerDew
+repo: https://github.com/SummerDew/astrbot_plugin_vote-mute
+support_platforms:
+  - aiocqhttp
+astrbot_version: ">=4.0.0"
