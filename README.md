@@ -4,6 +4,7 @@
 > QQ 群投票禁言插件 — 让群成员通过投票决定是否禁言指定用户
 
 **插件名称：** `astrbot_plugin_vote-mute`
+
 **作者：** SummerDew
 **版本：** 1.0.0
 **支持平台：** aiocqhttp（OneBot v11）
