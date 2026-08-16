@@ -14,7 +14,7 @@ help: |
   - 可在插件设置中配置是否需要 "/" 前缀触发指令
   - 可在插件设置中为每个群单独配置参数
   - 群管理员/群主可配置介入直接禁言或取消
-version: 1.0.0
+version: 1.0.1
 author: SummerDew
 repo: https://github.com/AethenNet/astrbot_plugin_vote-mute
 support_platforms:
