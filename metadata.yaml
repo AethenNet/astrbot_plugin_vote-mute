@@ -16,7 +16,7 @@ help: |
   - 群管理员/群主可配置介入直接禁言或取消
 version: 1.0.0
 author: SummerDew
-repo: https://github.com/SummerDew/astrbot_plugin_vote-mute
+repo: https://github.com/AethenNet/astrbot_plugin_vote-mute
 support_platforms:
   - aiocqhttp
 astrbot_version: ">=4.0.0"
