@@ -1,0 +1,2 @@
+# astrbot_plugin_toupiaojinyan
+一个用于Astrbot Q群投票禁言的插件
